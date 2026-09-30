@@ -1,0 +1,106 @@
+{
+ "paper": "Direct Tensile Strength of Ultra-High-Performance Fiber-Reinforced Concrete: Interpretable Prediction Using Metaheuristic-Optimized XGBoost",
+ "authors": [
+  "Akhil Nema",
+  "Ahmadullah Tabani",
+  "Rahul Biswas"
+ ],
+ "target": "Direct tensile strength, DTS (MPa)",
+ "n_train": 236,
+ "n_test": 60,
+ "feature_order": [
+  "Cement",
+  "Min. Adm.",
+  "Sand",
+  "SF",
+  "PEF",
+  "AR",
+  "FTS",
+  "Water",
+  "SP",
+  "Binder",
+  "W/B",
+  "SP/B",
+  "Powder",
+  "W/P",
+  "Vf (%)",
+  "FRI"
+ ],
+ "input_units": {
+  "Cement": "kg/m3",
+  "Min. Adm.": "kg/m3",
+  "Sand": "kg/m3",
+  "SF": "steel fibre, kg/m3",
+  "PEF": "PE fibre, kg/m3",
+  "AR": "fibre aspect ratio lf/df",
+  "FTS": "fibre tensile strength, MPa",
+  "Water": "kg/m3",
+  "SP": "superplasticiser, kg/m3"
+ },
+ "derived_features": {
+  "Binder": "Cement + Min. Adm.",
+  "W/B": "Water / Binder",
+  "SP/B": "SP / Binder",
+  "Powder": "Binder + Sand",
+  "W/P": "Water / Powder",
+  "Vf (%)": "(SF/7850 + PEF/970) x 100",
+  "FRI": "Vf (%) x AR"
+ },
+ "scaling": "MinMaxScaler(0,1) fitted on training set; see scaler.json",
+ "proposed_model": "WOA-XGB",
+ "WOA_XGB_test_metrics": {
+  "R2": 0.8576,
+  "RMSE_MPa": 1.3402,
+  "MAE_MPa": 1.0134,
+  "MAPE_pct": 10.5699,
+  "a20_pct": 90.0,
+  "bootstrap_95CI_R2": [
+   0.7634,
+   0.9119
+  ],
+  "overfit_gap": 0.1101
+ },
+ "hyperparameters": {
+  "GTO-XGB": {
+   "n_estimators": 527,
+   "max_depth": 5,
+   "learning_rate": 0.08630681323977676,
+   "subsample": 0.4515191472276524,
+   "colsample_bytree": 0.6388211977697886,
+   "reg_lambda": 3.4253114518641885,
+   "min_child_weight": 3,
+   "gamma": 0.48716015966683257
+  },
+  "WOA-XGB": {
+   "n_estimators": 344,
+   "max_depth": 5,
+   "learning_rate": 0.08110902833088353,
+   "subsample": 0.4956174308445435,
+   "colsample_bytree": 0.6333383992616455,
+   "reg_lambda": 3.5047050222422267,
+   "min_child_weight": 4,
+   "gamma": 0.47093912779660263
+  },
+  "PSO-XGB": {
+   "n_estimators": 418,
+   "max_depth": 5,
+   "learning_rate": 0.10308159779467246,
+   "subsample": 0.4530539771461948,
+   "colsample_bytree": 0.6760545287529023,
+   "reg_lambda": 3.0379367312737218,
+   "min_child_weight": 4,
+   "gamma": 0.430504248341251
+  },
+  "GWO-XGB": {
+   "n_estimators": 329,
+   "max_depth": 4,
+   "learning_rate": 0.08655061936989687,
+   "subsample": 0.48665212603930796,
+   "colsample_bytree": 0.7312626611421695,
+   "reg_lambda": 2.7535345718939435,
+   "min_child_weight": 2,
+   "gamma": 0.1088321070877216
+  }
+ },
+ "xgboost_version": "3.2.0"
+}
