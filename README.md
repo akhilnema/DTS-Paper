@@ -2,9 +2,10 @@
 
 Trained models and a graphical predictor accompanying:
 
-** A. Nema, A. Tabani, and R. Biswas. "Direct Tensile Strength of Ultra-High-Performance Fiber-Reinforced Concrete: Interpretable Prediction Using Metaheuristic-Optimized XGBoost."** (manuscript under review).
+**A. Nema, A. Tabani, and R. Biswas. "Direct Tensile Strength of Ultra-High-Performance Fiber-Reinforced Concrete: Interpretable Prediction Using Metaheuristic-Optimized XGBoost."** (manuscript under review).
 
 The repository provides the four metaheuristic-optimised XGBoost models reported in the paper (GTO – Gorilla Troops Optimizer, WOA – Whale Optimization Algorithm, PSO – Particle Swarm Optimization and GWO – Grey Wolf Optimizer; WOA-XGB is the proposed model) so that predictions can be reproduced for any mix. The training dataset and the training code are available from the corresponding author on reasonable request.
+
 **Main result:** over 30 repeated 80/20 holdout splits with hyperparameters re-tuned inside each split (leakage-free), WOA-XGB achieved a test R² of 0.788 ± 0.052 (RMSE = 1.65 MPa). The test metrics stored in `model_card.json` for the released models refer to a single reference split and are illustrative.
 
 ## Contents
