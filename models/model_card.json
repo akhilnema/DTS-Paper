@@ -48,7 +48,7 @@
  },
  "scaling": "MinMaxScaler(0,1) fitted on training set; see scaler.json",
  "proposed_model": "WOA-XGB",
- "WOA_XGB_test_metrics": {
+ "WOA_XGB_reference_split_metrics": {
   "R2": 0.8576,
   "RMSE_MPa": 1.3402,
   "MAE_MPa": 1.0134,
@@ -59,6 +59,14 @@
    0.9119
   ],
   "overfit_gap": 0.1101
+ },
+  "WOA_XGB_repeated_holdout_30_splits": {
+  "R2_mean": 0.788,
+  "R2_sd": 0.052,
+  "RMSE_MPa_mean": 1.65,
+  "MAE_MPa_mean": 1.17,
+  "train_test_gap_mean": 0.186,
+  "note": "Hyperparameters re-tuned within each split (leakage-free). This is the main result reported in the paper; the reference-split metrics above are illustrative."
  },
  "hyperparameters": {
   "GTO-XGB": {
